@@ -1,0 +1,74 @@
+{
+  "private": true,
+  "name": "vue3-vite-template",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Reawpai Chunsoi (reawpai.chun@yahoo.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Phaicom/vue3-vite-template/issues"
+  },
+  "homepage": "https://github.com/Phaicom/vue3-vite-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phaicom/vue3-vite-template.git"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "scripts": {
+    "cz": "git-cz",
+    "clean": "pnpm run clean:dist && pnpm run clean -r --stream",
+    "clean:dist": "rimraf dist",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 && pretty-quick --check --branch dev",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx && pretty-quick --branch dev",
+    "lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm -y"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx}": "eslint --fix"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@pnpm/find-workspace-packages": "^3.1.42",
+    "@pnpm/logger": "^4.0.0",
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "@vitejs/plugin-vue": "^2.2.4",
+    "@vue/tsconfig": "^0.1.3",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.2.5",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.2",
+    "unplugin-vue-define-options": "^0.4.0",
+    "vite": "^2.8.6",
+    "vue-tsc": "^0.32.1"
+  }
+}
